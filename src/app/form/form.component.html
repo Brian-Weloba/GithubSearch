@@ -1,0 +1,8 @@
+<div>
+    <form #form='ngForm'>
+        <div class="form-group">
+            <input class="form-control" type="search" placeholder="Enter GitHub username " aria-label="Search" name="username" [(ngModel)]="username">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="button" (click)="search()" routerLink="/profile">Search</button>
+        </div>
+    </form>
+</div>
