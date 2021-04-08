@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+}
+
+* {
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.repo-card {
+    max-width: 100%;
+    margin: auto;
+}
+
+.repo-title {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 2px solid #f9826c;
+    padding-bottom: 0!important;
+}
+
+mat-card {
+    background: inherit;
+    box-shadow: none!important;
+}
+
+mat-card-subtitle {
+    color: #8b949e;
+    font-size: 16px;
+}
+
+.followers {
+    display: flex;
+    flex-direction: row;
+}
+
+.repotext {
+    margin: 14px 0;
+    margin-right: 2px;
+    padding: 8px 16px;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-self: center;
+    padding-left: 16px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.card {
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    max-width: 100%;
+    border-bottom: 1px solid #30363d;
+    border-radius: 0%;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.matcard {
+    display: inline-block;
+    padding: 0;
+}
+
+mat-card-title {
+    color: green;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #58a6ff;
+    text-decoration: none;
+}
+
+span {
+    margin-right: 16px;
+}
+
+.card-footer {
+    width: 70%;
+    font-size: 12px;
+    color: #8b949e;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 16px;
+    margin-top: 8px;
+    color: #8b949e;
+}
+
+.avatar {
+    display: inline-block;
+    overflow: hidden;
+    line-height: 1;
+    vertical-align: middle;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 1px var(--color-avatar-border);
+    border-radius: 50%!important;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.container-profile {
+    max-width: 25%!important;
+}
+
+.container-repo {
+    max-width: 75% !important;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    width: 100%;
+    padding: 10px;
+}
+
+.main-flex {
+    margin: 0 40px;
+    padding-top: 50px;
+}
+
+.email {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #30363d;
+}
+
+.navbar {
+    background: #161b23
+}
+
+.octicon {
+    margin-top: 12px;
+    margin-left: 8px;
+}
+
+.ttl,
+#button {
+    margin-left: 32px;
+}

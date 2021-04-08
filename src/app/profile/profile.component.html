@@ -1,69 +1,81 @@
-<div>
-    <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="index.html">GitHub Finder</a>
-        <div class="search">
-            <app-form (emitSearch)="searchUsers($event)" (emitSearch)="searchRepos($event)"></app-form>
-        </div>
-    </nav>
+<div class="navbar">
+    <div>
+        <a routerLink="/profile"><svg class="octicon octicon-mark-github v-align-middle" height="42" viewBox="0 0 16 16" version="1.1" width="42" aria-hidden="true" fill='#c9d1d9'><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></a>
+    </div>
+    <div>
+        <app-form (emitSearch)="searchUsers($event)" (emitSearch)="searchRepos($event)"></app-form>
+    </div>
+    <p class="ttl">or</p>
+    <button id="button" mat-button color="accent"><a [routerLink]="['/repositories']">Search Repositories</a></button>
 </div>
+<div class="main-flex" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+    <div fxFlex="25%" class="container-profile">
 
-<div class="container">
-    <a routerLink="/profile">Home</a>
 
-    <!-- Profile -->
+        <!-- Profile -->
 
-    <div class="profile-container" *ngFor='let user of users'>
-        <div class="profile-content">
+        <div class="profile-container" *ngFor='let user of users'>
+            <div class="profile-content">
 
-            <div class="pic">
-                <div class="image-container">
-                    <a href="{{ user.html_url }}" target="_blank"><img src="{{ user.avatar_url }}" alt=""></a>
-                </div>
-                <a href="{{ user.html_url }}" target="_blank" style="text-decoration: none;">
-                    <h2 style="font-weight: bold; margin-bottom: 5px;">{{ user.name }}</h2>
-                </a>
-                <p style="font-size: 14px;">@{{ user.login }}</p>
-            </div>
-            <div class="summary">
-                <div class="content">
-                    <span>{{ user.followers }}</span>
-                    <span>Followers</span>
-                </div>
-                <div class="content">
-                    <span>{{ user.following }}</span>
-                    <span>Following</span>
-                </div>
-                <div class="profile-details">
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> {{ user.location }}</li>
-                        <li><i class="fas fa-quote-left"></i> "{{ user.bio }}"</li>
-                        <li><i class="fab fa-github-alt"></i> {{ user.public_repos }} Repositories</li>
-                        <li><i class="fas fa-calendar"></i> {{ user.created_at | date: "mediumDate" }}</li>
-                    </ul>
+                <div class="pic">
+                    <div class="image-container">
+                        <a href="{{ user.html_url }}" target="_blank"><img style="height:auto;" alt="" width="260" height="260" class="avatar avatar-user width-full border color-bg-primary" src="{{user.avatar_url}}" alt="{{user.name}}"></a>
+                    </div>
+                    <a href="{{ user.html_url }}" target="_blank">
+                        <h2 style=" font-weight:600;font-size: 26px; margin-bottom: 5px; color:#c9d1d9; font: size 29px;">{{ user.name }}</h2>
+                    </a>
+                    <p style="font-size: 16px;color: #8b949e;">@{{ user.login }}</p>
+                    <div class="bio">
+                        <p>{{user.bio}}</p>
+                    </div>
+                    <div class="followers">
+                        <svg style="margin:18px 5px;" class="octicon octicon-people text-icon-tertiary" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true" fill="#c9d1d9"><path fill-rule="evenodd" d="M5.5 3.5a2 2 0 100 4 2 2 0 000-4zM2 5.5a3.5 3.5 0 115.898 2.549 5.507 5.507 0 013.034 4.084.75.75 0 11-1.482.235 4.001 4.001 0 00-7.9 0 .75.75 0 01-1.482-.236A5.507 5.507 0 013.102 8.05 3.49 3.49 0 012 5.5zM11 4a.75.75 0 100 1.5 1.5 1.5 0 01.666 2.844.75.75 0 00-.416.672v.352a.75.75 0 00.574.73c1.2.289 2.162 1.2 2.522 2.372a.75.75 0 101.434-.44 5.01 5.01 0 00-2.56-3.012A3 3 0 0011 4z"></path></svg>
+                        <p style="font-size:16px; color:#c9d1d9"><strong>{{ user.followers }}</strong> followers · <strong>{{user.following}}</strong> following</p>
+                    </div>
+                    <div class="followers">
+                        <svg style="margin:3px 5px;" class="octicon octicon-location" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true" fill="#c9d1d9"><path fill-rule="evenodd" d="M11.536 3.464a5 5 0 010 7.072L8 14.07l-3.536-3.535a5 5 0 117.072-7.072v.001zm1.06 8.132a6.5 6.5 0 10-9.192 0l3.535 3.536a1.5 1.5 0 002.122 0l3.535-3.536zM8 9a2 2 0 100-4 2 2 0 000 4z"></path></svg>
+                        <p style="margin:0;"> {{user.location}}</p>
+                    </div>
+                    <div class="followers email">
+                        <svg style="margin:3px 5px;" class="octicon octicon-mail" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true" fill="#c9d1d9"><path fill-rule="evenodd" d="M1.75 2A1.75 1.75 0 000 3.75v.736a.75.75 0 000 .027v7.737C0 13.216.784 14 1.75 14h12.5A1.75 1.75 0 0016 12.25v-8.5A1.75 1.75 0 0014.25 2H1.75zM14.5 4.07v-.32a.25.25 0 00-.25-.25H1.75a.25.25 0 00-.25.25v.32L8 7.88l6.5-3.81zm-13 1.74v6.441c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V5.809L8.38 9.397a.75.75 0 01-.76 0L1.5 5.809z"></path></svg>
+                        <p style="margin:0;"> {{user.email}}</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Repos -->
+    <!-- Repos -->
 
-<div class="container">
-    <div class="repo-title" style="padding-bottom: 1%;">
-        <h3>Repositories</h3>
-    </div>
-    <div class="repos-class">
-        <div class="repo-card container">
-            <div class="grid">
-                <div class="card" *ngFor='let repo of repos'>
-                    <a href="{{ repo.html_url }}" class="card-link" target="_blank"><img src="https://cdn.afterdawn.fi/v3/news/original/github-logo.png" alt="" style="width: 150px; height: auto; padding-top: 10px;"></a>
-                    <p style="font-weight:bold;">{{ repo.name }}</p>
-                    <p>by: <strong>{{ repo.owner.login }}</strong></p>
-                    <p>language: <strong>{{ repo.language }}</strong></p>
-                    <p><strong>{{ repo.created_at | date: 'mediumDate' }}</strong></p>
-                    <div style="background: #00B4D8; padding: 5px 0;">
-                        <span style="margin: 0 10%;" class="label label-default"><i class="far fa-star"></i> {{repo.watchers}} </span>
-                        <span style="margin: 0 10%;" class="label label-primary"><i class="fas fa-code-branch"></i> {{repo.forks}} </span>
+    <div fxFlex="75% " class="container-repo ">
+        <div class="repo-title " style="padding-bottom: 1%; ">
+            <svg class=" repotext octicon octicon-repo UnderlineNav-octicon hide-sm " height="16 " viewBox="0 0 16 16 " version="1.1 " width="16 " aria-hidden="true " fill="#8b949e "><path fill-rule="evenodd " d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75
+                        0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25
+                        0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z "></path></svg>
+            <h3>Repositories</h3>
+        </div>
+        <div class="container ">
+            <div class="repos-class ">
+                <div class="repo-card ">
+                    <div class="grid ">
+                        <div class="card " *ngFor='let repo of repos'>
+                            <mat-card class="matcard ">
+                                <mat-card-header>
+                                    <mat-card-title><a href="{{ repo.html_url }} " class="card-link " target="_blank ">{{ repo.name }}</a></mat-card-title>
+                                    <mat-card-subtitle>
+                                        <p>{{repo.description}}</p>
+                                    </mat-card-subtitle>
+                                </mat-card-header>
+                                <mat-card-footer class="card-footer ">
+                                    <span><strong>{{ repo.language }}</strong></span>
+                                    <svg aria-label="fork " class="octicon octicon-repo-forked " viewBox="0 0 16 16 " version="1.1 " width="16 " height="16 " role="img " fill="#8b949e "><path fill-rule="evenodd " d="M5 3.25a.75.75 0 11-1.5 0 .75.75
+                        0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75
+                        0 11-1.5 0 .75.75 0 011.5 0zm3-8.75a.75.75 0 100-1.5.75.75 0 000 1.5z "></path></svg>
+                                    <span> {{repo.forks}} </span>
+                                    <span>Updated on {{ repo.updated_at | date: 'mediumDate' }}</span>
+                                </mat-card-footer>
+                            </mat-card>
+                        </div>
                     </div>
                 </div>
             </div>
