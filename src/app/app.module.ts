@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ReposComponent } from './repos/repos.component';
 import { RepoFormComponent } from './repo-form/repo-form.component';
 import { FooterComponent } from './footer/footer.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { FooterComponent } from './footer/footer.component';
     ReposComponent,
     RepoFormComponent,
     FooterComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
