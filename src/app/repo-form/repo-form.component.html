@@ -1,0 +1,12 @@
+<div>
+    <form class="form" #form='ngForm'>
+        <mat-form-field class="form-group">
+            <span matPrefix>@ &nbsp;</span>
+            <input id="input" matInput [formControl]="searchFormControl" type="search" placeholder="Search GitHub repository " name="reponame" [(ngModel)]="repoName" (keydown)='searchR($event)'>
+            <!-- <button id="button" mat-button type="submit" name="button" (click)="search()" routerLink="/profile">Search</button> -->
+            <!-- <mat-error *ngIf="searchFormControl.hasError('required')">
+                Username is required
+            </mat-error> -->
+        </mat-form-field>
+    </form>
+</div>

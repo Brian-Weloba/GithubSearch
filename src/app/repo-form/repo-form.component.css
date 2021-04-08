@@ -1,0 +1,30 @@
+    form {
+        min-width: 150px;
+        max-width: 500px;
+        width: 100%;
+    }
+    
+    .form-group {
+        width: 100%;
+    }
+    
+    mat-form-field {
+        background-color: inherit;
+        color: #8b949e;
+    }
+    
+    .form {
+        padding-left: 10px;
+        width: 100%;
+        justify-content: space-between;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    #button {
+        margin-left: 150px;
+    }
+    
+    .input {
+        caret-color: #8b949e;
+    }
