@@ -18,6 +18,7 @@ import { ReposComponent } from './repos/repos.component';
 import { RepoFormComponent } from './repo-form/repo-form.component';
 import { FooterComponent } from './footer/footer.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { DayTimePipe } from './day-time.pipe';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     RepoFormComponent,
     FooterComponent,
     NotFoundComponent,
+    DayTimePipe,
   ],
   imports: [
     BrowserModule,
