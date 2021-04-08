@@ -1,5 +1,5 @@
 import { EventEmitter, Component, OnInit, Output } from '@angular/core';
-
+import {FormControl, Validators} from '@angular/forms';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -11,11 +11,20 @@ export class FormComponent implements OnInit {
 
   username: string;
 
+  searchFormControl=new FormControl('', [
+    Validators.required
+  ]);
+
   constructor() { }
 
-  search() {
-    this.emitSearch.emit(this.username)
-    console.log(this.username)
+  search(event) {
+    
+    // console.log(this.username);
+    if(event.keyCode===13){
+      this.emitSearch.emit(this.username)
+      this.searchFormControl.reset();
+    }
+  
     }
 
   ngOnInit() {
