@@ -18,8 +18,7 @@ export class FormComponent implements OnInit {
   constructor() { }
 
   search(event) {
-    
-    // console.log(this.username);
+  
     if(event.keyCode===13){
       this.emitSearch.emit(this.username)
       this.searchFormControl.reset();
