@@ -1,34 +1,50 @@
-    form {
-        min-width: 150px;
-        max-width: 500px;
-        width: 100%;
-    }
-    
-    .form-group {
-        width: 100%;
-    }
-    
-    mat-form-field {
-        background-color: inherit;
-        color: #8b949e;
-    }
-    
-    mat-card {
-        width: 100%;
-    }
-    
-    .form {
-        padding-left: 10px;
-        width: 100%;
-        justify-content: space-between;
-        display: flex;
-        flex-direction: row;
-    }
-    
-    #button {
-        margin-left: 150px;
-    }
-    
-    .input {
-        caret-color: #8b949e;
-    }
+form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.form-group {
+    width: 100%;
+}
+
+mat-form-field {
+    background-color: inherit;
+    color: #8b949e;
+}
+
+mat-card {
+    width: 100%;
+}
+
+.form {
+    padding-left: 10px;
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+}
+
+#button {
+    margin-left: 150px;
+}
+
+.input {
+    caret-color: #8b949e;
+}
+
+ ::ng-deep .mat-focused .mat-form-field-label .mat-form-field-invalid .mat-input-element {
+    /*change color of label*/
+    color: #8b949e !important;
+}
+
+ ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: #8b949e !important;
+}
+
+ ::ng-deep.mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: #8b949e !important;
+    ;
+}

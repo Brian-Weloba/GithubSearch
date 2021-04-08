@@ -120,4 +120,10 @@ span {
 .ttl,
 #button {
     margin-left: 32px;
+    padding: 6px 0;
+}
+
+#button {
+    font-size: 16px;
+    background-color: transparent;
 }

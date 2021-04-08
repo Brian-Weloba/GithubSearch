@@ -17,6 +17,7 @@ body {
     color: #c9d1d9;
 }
 
-.mat-form-field-invalid .mat-input-element {
-    caret-color: #8b949e;
+.mat-input-element {
+    color: #8b949e !important;
+    caret-color: #8b949e !important;
 }
