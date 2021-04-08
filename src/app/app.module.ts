@@ -16,6 +16,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ReposComponent } from './repos/repos.component';
 import { RepoFormComponent } from './repo-form/repo-form.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { RepoFormComponent } from './repo-form/repo-form.component';
     FormComponent,
     ReposComponent,
     RepoFormComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

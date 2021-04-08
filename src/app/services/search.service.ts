@@ -24,7 +24,7 @@ export class SearchService {
   searchUser(username: string) {
     let promise = new Promise<void>((resolve, reject) => {
 
-      this.http.get<any>('https://api.github.com/users/' + username + '?access_token=' + environment.apiKey).toPromise().then(
+      this.http.get<any>('https://api.github.com/users/' + username).toPromise().then(
         (results) => {
           this.users = [];
           this.users.push(results);
@@ -51,7 +51,7 @@ export class SearchService {
     }
 
     let promise = new Promise<void>((resolve, reject) => {
-      this.http.get<results>('https://api.github.com/users/' + username + '/repos?access_token=' + environment.apiKey).toPromise().then(
+      this.http.get<results>('https://api.github.com/users/' + username + '/repos').toPromise().then(
         (results) => {
           this.repos;
           this.repos = results;
