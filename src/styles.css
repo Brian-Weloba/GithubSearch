@@ -2,5 +2,21 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 * {
-    font-family: 'Montserrat', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: #0d1117;
+    margin: 0;
+    color: #c9d1d9;
+}
+
+.mat-form-field-invalid .mat-input-element {
+    caret-color: #8b949e;
 }
